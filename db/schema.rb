@@ -10,6 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_05_17_062128) do
+
+  create_table "d_kadai_kanris", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "kadai_cd", null: false
+    t.integer "INTEGER PRIMARY KEY AUTO_INCREMENT", null: false
+    t.string "kadai_title", null: false
+    t.string "kadai_psner", null: false
+    t.text "kadai_contents", null: false
+    t.string "kadai_person", null: false
+    t.datetime "kadai_limit", null: false
+    t.integer "kadai_phase", null: false
+    t.integer "kadai_impt", null: false
+    t.integer "kadai_status", null: false
+    t.integer "kadai_cgr", null: false
+    t.string "kadai_tenp"
+    t.text "kadai_try"
+    t.text "kadai_try2"
+    t.text "kadai_try3"
+    t.datetime "kadai_try_d"
+    t.datetime "kadai_try2_d"
+    t.datetime "kadai_try3_d"
+    t.string "kadai_try_w"
+    t.string "kadai_try2_w"
+    t.string "kadai_try3_w"
+    t.string "kadai_try_p"
+    t.string "kadai_try2_p"
+    t.string "kadai_try3_p"
+    t.string "kadai_cmt_psner"
+    t.text "kadai_cmt_ents"
+    t.string "kadai_cmt_notifier"
+    t.datetime "kadai_inst_ymd"
+    t.datetime "kadai_updt_ymd"
+    t.datetime "kadai_del_ymd"
+    t.bigint "kadai_del_flag", null: false
+    t.string "kadai_updt_id", limit: 256
+    t.string "kadai_updt_s_end", limit: 256
+    t.string "kadai_updt_t_end", limit: 256
+  end
 
 end
