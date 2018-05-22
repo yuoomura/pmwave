@@ -1,0 +1,2 @@
+module DYokenKanrisHelper
+end

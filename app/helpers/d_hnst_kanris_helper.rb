@@ -1,0 +1,2 @@
+module DHnstKanrisHelper
+end

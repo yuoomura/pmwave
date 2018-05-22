@@ -1,2 +1,0 @@
-class KadaisController < ApplicationController
-end

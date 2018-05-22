@@ -1,0 +1,2 @@
+class DYokenKanrisController < ApplicationController
+end

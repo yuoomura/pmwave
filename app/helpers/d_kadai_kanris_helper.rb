@@ -1,0 +1,2 @@
+module DKadaiKanrisHelper
+end
