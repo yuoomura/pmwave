@@ -10,11 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_17_062128) do
+ActiveRecord::Schema.define(version: 2018_05_22_122227) do
 
-  create_table "d_kadai_kanris", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "kadai_cd", null: false
-    t.integer "INTEGER PRIMARY KEY AUTO_INCREMENT", null: false
+  create_table "trn_kadai_kanris", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "pj_id", null: false
+    t.integer "hojn_id", null: false
+    t.integer "menu_id", null: false
+    t.integer "kadai_s_id", null: false
     t.string "kadai_title", null: false
     t.string "kadai_psner", null: false
     t.text "kadai_contents", null: false

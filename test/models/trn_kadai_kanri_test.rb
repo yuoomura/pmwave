@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DKadaiKanriTest < ActiveSupport::TestCase
+class TrnKadaiKanriTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -1,2 +1,0 @@
-class DKadaiKanri < ApplicationRecord
-end

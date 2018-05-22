@@ -1,0 +1,6 @@
+      invoke  active_record
+      create    db/migrate/20180522121810_create_trn_kadai_kanris.rb
+      create    app/models/trn_kadai_kanri.rb
+      invoke    test_unit
+      create      test/models/trn_kadai_kanri_test.rb
+      create      test/fixtures/trn_kadai_kanris.yml

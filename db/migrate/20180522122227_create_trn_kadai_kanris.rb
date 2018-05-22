@@ -1,7 +1,10 @@
-class CreateDKadaiKanris < ActiveRecord::Migration[5.2]
+class CreateTrnKadaiKanris < ActiveRecord::Migration[5.2]
   def change
-    create_table :d_kadai_kanris, id: false do |t|
-      t.integer :kadai_cd ,'INTEGER PRIMARY KEY AUTO_INCREMENT',null:false
+    create_table :trn_kadai_kanris do |t|
+			t.integer :pj_id ,null:false
+			t.integer :hojn_id ,null:false
+			t.integer :menu_id ,null:false
+			t.integer :kadai_s_id ,null:false
 			t.string :kadai_title ,null:false,  :limit => 255
 			t.string :kadai_psner ,null:false
 			t.text :kadai_contents ,null:false

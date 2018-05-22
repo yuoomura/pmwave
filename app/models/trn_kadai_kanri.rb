@@ -1,0 +1,2 @@
+class TrnKadaiKanri < ApplicationRecord
+end
