@@ -1,2 +1,0 @@
-class DKadaiKanrisController < ApplicationController
-end

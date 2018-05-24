@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DYokenKanrisControllerTest < ActionDispatch::IntegrationTest
+class MstKadaiStatusTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

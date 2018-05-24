@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'd_kadai_kanris#index'
+  root to: 'top_kadais#index'
 
-  resources :d_kadai_kanris
-  resources :d_hnst_kanris
-  resources :d_yoken_kanris
+  resources :top_kadais
+  resources :top_hnsts
+  resources :top_yokens
 end
