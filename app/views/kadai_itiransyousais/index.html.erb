@@ -4,3 +4,40 @@
        <p><%= link_to 'トップページへ', '/top_kadais/index' %></p>
   </div>
 </div>
+
+<h2>一覧画面</h2>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th class="grid-th-width1 pc-only">No</th>
+    <th class="grid-th-width2">タスク</th>
+    <th class="grid-th-width3">期限</th>
+    <th class="grid-th-width4">ｽﾃｰﾀｽ</th>
+    <th class="grid-th-width5">編集</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @kadai_itiransyousais.each do |kadai_itiransyousai| %>
+      <tr style="height:48px;">
+        <td class="pc-only"><%= @grid_no.to_s %></td>
+        <td style="vertical-align: middle"><%= trn_kadai_kanri.kadai_title %></td>
+        <td style="vertical-align: middle"><%= kadai_try_format(trn_kadai_kanri.kadai_try) %></td>
+        <td style="vertical-align: middle"><%= kadai_status_tag(trn_kadai_kanri) %></td>
+        <td class="henshu-cell">
+ 
+        </td>
+      </tr>
+      <% @grid_no = @grid_no + 1 %>
+  <% end %>
+  <tbody>
+  </table>
+<div style="text-align: center">
+  <%= will_paginate @trn_kadai_kanris,
+                    renderer: BootstrapPagination::Rails,
+                    previous_label: "前へ",
+                    next_label: "次へ",
+                    inner_window: 1,
+                    outer_window: 0,
+                    class:"pagination-sm"
+  %>
+</div>

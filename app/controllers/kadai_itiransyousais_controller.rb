@@ -2,6 +2,20 @@ class KadaiItiransyousaisController < ApplicationController
       #一覧画面 表示のアクション
   def index
 
+  #データの取得
+  @kadai_itiransyousais = TrnKadaiKanri
+    .by_kadai_status(params[:kadai_status])
+    .paginate(page: params[:page], per_page: 5)
+    .order('kadai_status asc, kadai_try_d asc')
+ 
+  #No列の開始No
+  @grid_no = 1
+ 
+  #params[:page]がNullまたは空ではない場合
+  if params[:page].present?
+    #開始No = ページ × ページングサイズ
+    @grid_no = (params[:page].to_i - 1) * 5 + 1
+  end
   end
 
   #照会画面 表示のアクション
