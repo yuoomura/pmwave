@@ -13,10 +13,10 @@ module KadaiItiransyousaisHelper
   end
  
   #期限（日付型）をYYYY/MM/DD形式の文字列で表示する
-  def kadai_try_format(kadai_try)
+  def kadai_limit_format(kadai_limit)
     result = ""
-    if kadai_try.present?
-      result = kadai_try.strftime("%Y/%m/%d")
+    if kadai_limit.present?
+      result = kadai_limit.strftime("%Y/%m/%d")
     end
     result
   end

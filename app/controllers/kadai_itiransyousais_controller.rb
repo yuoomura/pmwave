@@ -1,12 +1,13 @@
 class KadaiItiransyousaisController < ApplicationController
       #一覧画面 表示のアクション
-  def index
 
+def index
+ 
   #データの取得
   @kadai_itiransyousais = TrnKadaiKanri
     .by_kadai_status(params[:kadai_status])
     .paginate(page: params[:page], per_page: 5)
-    .order('kadai_status asc, kadai_try_d asc')
+    .order('kadai_status asc, kadai_limit asc')
  
   #No列の開始No
   @grid_no = 1
@@ -16,8 +17,8 @@ class KadaiItiransyousaisController < ApplicationController
     #開始No = ページ × ページングサイズ
     @grid_no = (params[:page].to_i - 1) * 5 + 1
   end
-  end
-
+ 
+end
 #照会画面 表示のアクション
 def show
 
@@ -56,11 +57,11 @@ def create
     #--------------
     #エラーがない場合
     #--------------
-    if @kadai_itiransyousai.kadai_try_str.present?
-      @kadai_itiransyousai.kadai_try = Date.new(
-        @kadai_itiransyousai.kadai_try_str[0..3].to_i,
-        @kadai_itiransyousai.kadai_try_str[4..5].to_i,
-        @kadai_itiransyousai.kadai_try_str[6..7].to_i)
+    if @kadai_itiransyousai.kadai_limit_str.present?
+      @kadai_itiransyousai.kadai_limit = Date.new(
+        @kadai_itiransyousai.kadai_limit_str[0..3].to_i,
+        @kadai_itiransyousai.kadai_limit_str[4..5].to_i,
+        @kadai_itiransyousai.kadai_limit_str[6..7].to_i)
     end
     @kadai_itiransyousai.kadai_status = false
  
@@ -91,7 +92,7 @@ def kadai_itiransyousai_params
   params.require(:kadai_itiransyousai).permit(
     :kadai_title,
     :kadai_contents,
-    :kadai_try_str
+    :kadai_limit_str
   )
 end
 

@@ -17,7 +17,7 @@
   <tr>
     <th class="grid-th-width1 pc-only">No</th>
     <th class="grid-th-width2">タスク(kadai_title)</th>
-    <th class="grid-th-width3">期限(kadai_try)</th>
+    <th class="grid-th-width3">期限(kadai_limit)</th>
     <th class="grid-th-width4">ｽﾃｰﾀｽ(kadai_status)</th>
     <th class="grid-th-width5">編集</th>
   </tr>
@@ -27,7 +27,7 @@
       <tr style="height:48px;">
         <td class="pc-only"><%= @grid_no.to_s %></td>
         <td style="vertical-align: middle"><%= kadai_itiransyousai.kadai_title %></td>
-        <td style="vertical-align: middle"><%= kadai_try_format(kadai_itiransyousai.kadai_try) %></td>
+        <td style="vertical-align: middle"><%= kadai_limit_format(kadai_itiransyousai.kadai_limit) %></td>
         <td style="vertical-align: middle"><%= kadai_status_tag(kadai_itiransyousai) %></td>
         <td class="henshu-cell">
 <!-- 一覧画面の作成②で追加 ここから -->
