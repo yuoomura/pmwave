@@ -39,5 +39,5 @@ TrnKadaiKanri.create!(
   kadai_updt_id:"123456789",
   kadai_updt_s_end:"最終更新",
   kadai_updt_t_end:"担当者更新最終履歴",
+  kadai_kanryo:"false",
 )
-　end

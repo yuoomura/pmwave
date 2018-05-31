@@ -6,7 +6,7 @@ module KadaiItiransyousaisHelper
     if trn_kadai_kanri.kadai_status == true
       result = '済'
     else
-      result = '<a class="btn btn-sm btn-primary" href="' + kadai_kanryo_trn_kadai_kanri_path(trn_kadai_kanri) + '">完了</a>'
+      result = '<a class="btn btn-sm btn-primary" href="' + kadai_itiransyousai_path(trn_kadai_kanri) + '">完了</a>'
     end
     #文字列をそのままHTMLタグとして出力
     result.html_safe
