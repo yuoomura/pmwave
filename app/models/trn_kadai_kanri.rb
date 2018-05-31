@@ -3,16 +3,16 @@ class TrnKadaiKanri < ApplicationRecord
   #期限のアクセサー（画面入力用）
   attr_accessor :kadai_limit_str
   
-  scope :by_kadai_status, ->(kadai_status){
-    if kadai_status.present?
+  scope :by_kadai_kanryo, ->(kadai_kanryo){
+    if kadai_kanryo.present?
       #bool型の変数
-      kadai_status_bool = true
-      if kadai_status == "true"
-        kadai_status_bool = true
+      kadai_kanryo_bool = true
+      if kadai_kanryo == "true"
+        kadai_kanryo_bool = true
       else
-        kadai_status_bool = false
+        kadai_kanryo_bool = false
       end
-      where('kadai_status = ?', kadai_status_bool)
+      where('kadai_kanryo = ?', kadai_kanryo_bool)
     end
   }
 end

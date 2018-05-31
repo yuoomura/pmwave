@@ -5,9 +5,9 @@ def index
  
   #データの取得
   @kadai_itiransyousais = TrnKadaiKanri
-    .by_kadai_status(params[:kadai_status])
+    .by_kadai_kanryo(params[:kadai_kanryo])
     .paginate(page: params[:page], per_page: 5)
-    .order('kadai_status asc, kadai_limit asc')
+    .order('kadai_kanryo asc, kadai_limit asc')
  
   #No列の開始No
   @grid_no = 1
@@ -106,10 +106,10 @@ end
   def destroy
  
     #idでTrnKadaiKanrisテーブルを取得
-    @kadai_itiransyousai = TrnKadaiKanri.find(params[:id])
+    @trn_kadai_kanri = TrnKadaiKanri.find(params[:id])
  
     #削除処理（delete文発行）
-    @kadai_itiransyousais.destroy
+    @trn_kadai_kanri.destroy
  
     #フラッシュ（一度きりのセッション）にメッセージを格納
     flash[:msg] = "削除しました。"
@@ -120,16 +120,16 @@ end
   end
  
   #一覧画面 完了ボタン押下時のアクション
-  def kadai_status
+  def kadai_kanryo
  
     #idでTrnKadaiKanrisテーブルを取得
-    @kadai_itiransyousai = TrnKadaiKanri.find(params[:id])
+    @trn_kadai_kanri = TrnKadaiKanri.find(params[:id])
  
-    #kanryoにtrueをセット
-    @kadai_itiransyousai. kadai_status = true
+    #kadai_kanryoにtrueをセット
+    @trn_kadai_kanri. kadai_kanryo = true
  
     #更新処理（update文発行）
-    @kadai_itiransyousai.save
+    @trn_kadai_kanri.save
  
     #呼び出し元URLへリダイレクト
     redirect_to request.referer

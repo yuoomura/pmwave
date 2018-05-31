@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_24_002818) do
+ActiveRecord::Schema.define(version: 2018_05_31_123005) do
 
   create_table "mst_kadai_cgrs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "pj_id", null: false
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 2018_05_24_002818) do
     t.string "kadai_updt_id", limit: 256
     t.string "kadai_updt_s_end", limit: 256
     t.string "kadai_updt_t_end", limit: 256
+    t.boolean "kadai_kanryo"
   end
 
 end

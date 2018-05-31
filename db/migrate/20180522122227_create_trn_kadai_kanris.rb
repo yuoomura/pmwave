@@ -37,6 +37,7 @@ class CreateTrnKadaiKanris < ActiveRecord::Migration[5.2]
 			t.string :kadai_updt_id, limit: 256
 			t.string :kadai_updt_s_end, limit: 256
 			t.string :kadai_updt_t_end, limit: 256
+			t.boolean :kadai_kanryo
     end
   end
 end
