@@ -1,4 +1,7 @@
 class TrnKadaiKanri < ApplicationRecord
+  
+
+  
   scope :by_kadai_status, ->(kadai_status){
     if kadai_status.present?
       #bool型の変数

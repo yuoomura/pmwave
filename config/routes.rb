@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get "kadai_itiransyousais/index"
   get "kadai_itiransyousais/show"
+  post "kadai_itiransyousais/index"
   get "top_kadais/index"
   get "top_kadais/show"
   
