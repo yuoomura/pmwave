@@ -2,7 +2,7 @@
 
 <h2>登録画面</h2>
 <div class="waku">
-　　<%= form_for @kadai_itiransyousai, url: kadai_itiransyousais_index_path do |f| %>
+　<%= form_for @kadai_itiransyousai do |f| %>
       <%= render "form", f: f %>
       <div class="row well" style="margin:20px 0 0 0;padding:10px;">
         <div class="col-sm-12">
@@ -10,5 +10,5 @@
           <%= f.submit "登録する", class:"btn btn-primary", style:"float:right" %>
         </div>
       </div>
-    <% end %>
+  <% end %>
 </div>
