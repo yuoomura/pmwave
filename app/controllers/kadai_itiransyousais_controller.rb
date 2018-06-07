@@ -34,7 +34,7 @@ end
 def new
  
   #TrnKadaiKanrisテーブルのスキーマでモデル（ActiveRecord）を作成
-  @kadai_itiransyousai = TrnKadaiKanri.new
+  @trn_kadai_kanri = TrnKadaiKanri.new
  
   #viewを表示（省略可）
   render "new"
@@ -49,8 +49,7 @@ end
 #登録画面 登録ボタン押下時のアクション
 def create
  
-  #POSTされた値を元にTrnKadaiKanrisテーブル登録用レコードを作成
-  @trn_kadai_kanri = TrnKadaiKanri.new(kadai_itiransyousai_params)
+
  
   #エラーチェック
   if @trn_kadai_kanri.valid?

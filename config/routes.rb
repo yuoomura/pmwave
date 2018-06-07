@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   get "top_kadais/index"
   get "top_kadais/show"
   
-  resources :kadai_itiransyousais
   resources :top_kadais
+  resources :kadai_itiransyousais
   resources :top_hnsts
   resources :top_yokens
+  
 end
