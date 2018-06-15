@@ -1,10 +1,10 @@
-class KadaiItiransyousaisController < ApplicationController
+class TrnKadaiKanrisController < ApplicationController
       #一覧画面 表示のアクション
 
 def index
  
   #データの取得
-  @kadai_itiransyousais = TrnKadaiKanri
+  @trn_kadai_kanris = TrnKadaiKanri
     .by_kadai_kanryo(params[:kadai_kanryo])
     .paginate(page: params[:page], per_page: 5)
     .order('kadai_kanryo asc, kadai_limit asc')
@@ -23,7 +23,7 @@ end
 def show
 
   #idで=TrnKadaiKanrisテーブルを取得
-  @kadai_itiransyousai = TrnKadaiKanri.find(params[:id])
+  @trn_kadai_kanri = TrnKadaiKanri.find(params[:id])
 
   #viewを表示（省略可）
   render "show"
@@ -34,7 +34,7 @@ end
 def new
  
   #TrnKadaiKanrisテーブルのスキーマでモデル（ActiveRecord）を作成
-  @kadai_itiransyousai = TrnKadaiKanri.new
+  @trn_kadai_kanri = TrnKadaiKanri.new
  
   #viewを表示（省略可）
   render "new"
@@ -50,29 +50,29 @@ end
 def create
  
   #POSTされた値を元にTrnKadaiKanrisテーブル登録用レコードを作成
-  @kadai_itiransyousai = TrnKadaiKanri.new(kadai_itiransyousai_params)
+  @trn_kadai_kanri = TrnKadaiKanri.new(trn_kadai_kanri_params)
  
   #エラーチェック
-  if @kadai_itiransyousai.valid?
+  if @trn_kadai_kanri.valid?
     #--------------
     #エラーがない場合
     #--------------
-    if @kadai_itiransyousai.kadai_limit_str.present?
-      @kadai_itiransyousai.kadai_limit = Date.new(
-        @kadai_itiransyousai.kadai_limit_str[0..3].to_i,
-        @kadai_itiransyousai.kadai_limit_str[4..5].to_i,
-        @kadai_itiransyousai.kadai_limit_str[6..7].to_i)
+    if @trn_kadai_kanri.kadai_limit_str.present?
+      @trn_kadai_kanri.kadai_limit = Date.new(
+        @trn_kadai_kanri.kadai_limit_str[0..3].to_i,
+        @trn_kadai_kanri.kadai_limit_str[4..5].to_i,
+        @trn_kadai_kanri.kadai_limit_str[6..7].to_i)
     end
-    @kadai_itiransyousai.kadai_kanryo = false
+    @trn_kadai_kanri.kadai_kanryo = false
  
-    #更新（エラーチェックを行わない）
-    @kadai_itiransyousai.save(validate:false)
- 
+#ここになんかかいてあったけど消した「更新（エラーチェックを行わない）」
+  @trn_kadai_kanri.save(validate:false)
+  
     #フラッシュ（一度きりのセッション）にメッセージを格納
     flash[:msg] = "登録しました。"
  
     #一覧画面へリダイレクト
-    redirect_to kadai_itiransyousais_path
+    redirect_to trn_kadai_kanris_path
   else
     #--------------
     #エラー時
@@ -88,8 +88,8 @@ private
 #------------------------------------------------------------------------------
  
 #ストロングパラメータ（マスアサインメント脆弱性回避）
-def kadai_itiransyousai_params
-  params.require(:kadai_itiransyousai).permit(
+def trn_kadai_kanri_params
+  params.require(:trn_kadai_kanri).permit(
     :kadai_title,
     :kadai_contents,
     :kadai_limit_str
@@ -106,10 +106,10 @@ end
   def destroy
  
     #idでTrnKadaiKanrisテーブルを取得
-    @kadai_itiransyousai = TrnKadaiKanri.find(params[:id])
+    @trn_kadai_kanri = TrnKadaiKanri.find(params[:id])
  
     #削除処理（delete文発行）
-    @kadai_itiransyousai.destroy
+    @trn_kadai_kanri.destroy
  
     #フラッシュ（一度きりのセッション）にメッセージを格納
     flash[:msg] = "削除しました。"
@@ -123,13 +123,13 @@ end
   def kadai_kanryo
  
     #idでTrnKadaiKanrisテーブルを取得
-    @kadai_itiransyousai = TrnKadaiKanri.find(params[:id])
+    @trn_kadai_kanri = TrnKadaiKanri.find(params[:id])
  
     #kadai_kanryoにtrueをセット
-    @kadai_itiransyousai. kadai_kanryo = true
+    @trn_kadai_kanri. kadai_kanryo = true
  
     #更新処理（update文発行）
-    @kadai_itiransyousai.save
+    @trn_kadai_kanri.save
  
     #呼び出し元URLへリダイレクト
     redirect_to request.referer
