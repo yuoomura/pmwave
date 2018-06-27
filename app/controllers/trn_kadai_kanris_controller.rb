@@ -65,7 +65,7 @@ def create
     end
     @trn_kadai_kanri.kadai_kanryo = false
  
-#ここになんかかいてあったけど消した「更新（エラーチェックを行わない）」
+#更新（エラーチェックを行わない）
   @trn_kadai_kanri.save(validate:false)
   
     #フラッシュ（一度きりのセッション）にメッセージを格納
